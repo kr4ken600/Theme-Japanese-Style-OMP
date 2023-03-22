@@ -15,13 +15,13 @@ Instalar **[Oh My Posh](https://ohmyposh.dev/)**
 ```
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
->Para mas información rebisar la documentacion en la pagina oficical
+>Para mas información revisar la documentacion en la pagina oficical
 
 Instalar **[Terminal-Icons](https://github.com/devblackops/Terminal-Icons)**
 ```
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
->Para mas información rebisar el repositorio oficial
+>Para mas información revisar el repositorio oficial
 
 Descargar e instalar la fuente **[Hack Nerd Font Mono](https://www.nerdfonts.com/font-downloads)**
 
