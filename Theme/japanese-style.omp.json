@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#CB4B16>\u250f[</> \ue784 {{ .UserName }}<#CB4B16> ]</>",
+          "type": "session"
+        },
+        {
+          "foreground": "#D23D3D",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": "<#CB4B16>[</> {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} <#A0CF5D>{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}</><#CB4B16> ]</>",
+          "type": "git"
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#CB4B16>[</> \uf0e7<#CB4B16> ]</>",
+          "type": "root"
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#CB4B16>[ x </>{{ .Meaning }}<#CB4B16> ]</>",
+          "type": "exit"
+        },
+        {
+          "foreground": "#4E9FB1",
+          "style": "plain",
+          "template": "<#CB4B16>[</> \ue62a <#CB4B16>]</>",
+          "type": "session"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#4E9FB1",
+          "style": "diamond",
+          "template": "RAM:{{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "trailing_diamond": " ",
+          "type": "sysinfo"
+        },
+        {
+          "foreground": "#6D878D",
+          "leading_diamond": "\u250b",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " {{ .FormattedMs }} ",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "<#CB4B16>\u2516[</> {{ .Path }}<#CB4B16> ]></>",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
